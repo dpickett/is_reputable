@@ -1,6 +1,17 @@
 = is_reputable
 
-Description goes here.
+  create_table "point_awards", :force => true do |t|
+    t.integer  "awardable_id",   :null => false
+    t.string   "awardable_type", :null => false
+    t.integer  "subject_id",     :null => false
+    t.string   "subject_type",   :null => false
+    t.string   "type",           :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "points"
+  end
+  
+  add_column :users, :reputation_score, :integer
 
 == Contributing to is_reputable
  
